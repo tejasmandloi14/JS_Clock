@@ -1,0 +1,122 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.toggle{
+    background-color: var(--pcolor);
+    color: var(--scolor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 4px;
+    border: 0;
+    padding: 8px 12px;
+    position: absolute;
+    top: 100px;
+    cursor: pointer;
+}
+
+:root{
+    --pcolor: black;
+    --scolor: white;
+}
+
+html{
+    transition: all 0.5s ease-in;
+}
+
+html.dark{
+    --pcolor: white;
+    --scolor: black;
+}
+
+html.dark{
+    background-color: var(--scolor);
+    color: var(--pcolor);
+}
+
+.toggle:focus{
+    outline: none;
+}
+
+.clock-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.clock{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    bottom: 30px;
+    
+}
+
+.needle{
+    background-color: var(--pcolor);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.needle.hour{
+    transform: translate(-50%,-100%) rotate(0deg);
+    
+}
+.needle.minute{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+    background-color: red;
+}
+
+.center-point{
+    background-color: red;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.center-point::after{
+    content: '';
+    background-color: var(--pcolor);
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-60%,-50%);
+    border-radius: 50%;
+}
+
+.time{
+    font-size: 50px;
+}
+
+.date{
+    font-size: 15px;
+    margin: 20px;
+    letter-spacing: 1px;
+    /* color: var(--scolor); */
+    text-transform: uppercase;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
